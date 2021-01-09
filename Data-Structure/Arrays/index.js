@@ -144,3 +144,45 @@ Array.prototype.reduce = function(callbackFn, initialValue) {
     }
     return initialValue;
   }
+
+
+// Flat 
+
+
+let input = [
+  1,2,3,[4],
+  [5,6, [7],[8,[9,[10]]]],
+  11,12,13,[14,[[[[[15,[16]]]]]]],
+  17,18,
+  [19,[20,[21,[22,[23,[24,[[[[[25]]]]]]]]]]],
+];
+
+Array.prototype.flatten = function(depth) {
+  let output = [];
+
+  function abc(arr, depth) {
+    for(let i=0;i<arr.length;i++) {
+      if(depth<0){
+        return;
+      }
+      if(Array.isArray(arr[i])){
+        abc(arr[i],depth-1);
+      } else {
+        output.push(arr[i]);
+      }
+    }
+  }
+
+  abc(this,depth);
+  return output;
+
+}
+
+// Array.prototype.flat2 = function() {
+//   // this == arr
+//   return this.toString().split(',').map((n)=> Number(n) );
+// }
+
+let flatArr = input.flatten(2);
+console.log(flatArr);
+
