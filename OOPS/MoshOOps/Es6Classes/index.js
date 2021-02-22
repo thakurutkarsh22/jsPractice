@@ -83,7 +83,7 @@
 
 // console.log(Circle.parse('{"radius":1}'));
 
-// // circle.parse // dont exist
+// circle.parse // dont exist
 
 
 
@@ -224,17 +224,17 @@
 // ----------------- Method Overriding-------------------
 
 
-class Shape { 
+// class Shape { 
 
-    move() {
-        console.log('move');
-    }
-}
+//     move() {
+//         console.log('move');
+//     }
+// }
 
-class Circle extends Shape {
-    move() {
-        console.log('circle Move');
-    }
-}
+// class Circle extends Shape {
+//     move() {
+//         console.log('circle Move');
+//     }
+// }
 
-const c = new Circle();
+// const c = new Circle();

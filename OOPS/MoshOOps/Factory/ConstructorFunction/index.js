@@ -20,45 +20,45 @@ let x = {};
 
 // ---------------- Factory function ---------------------
 
-// function createCircle(radius) {
-//     return {
-//         radius,
-//         draw: function() {
-//             console.log('draw');
-//         }
-//     };
-// }
+function createCircle(radius) {
+    return {
+        radius,
+        draw: function() {
+            console.log('draw');
+        }
+    };
+}
 
-// const circle = createCircle(1);
-// circle.draw();
+const circle = createCircle(1);
+circle.draw();
 
 
 // ------------------- constructor function  --------------------
 
-function Circle(radius) {
-    console.log(this)
-    this.radius = radius;
-    this.draw = function() {
-        console.log('draw'+this.radius);
-    }
-} 
+// function Circle(radius) {
+//     console.log(this)
+//     this.radius = radius;
+//     this.draw = function() {
+//         console.log('draw'+this.radius);
+//     }
+// } 
 
-const a = Circle(1);
-// a.draw();
+// const a = Circle(1);
+// // a.draw();
 
-const another = new Circle(1); // new = {} and this point to this obj
-another.draw();
+// const another = new Circle(1); // new = {} and this point to this obj
+// another.draw();
 
 
 // this is the construction function that makes an object 
 
 
-const Circle1 = new Function('radius',`
-    this.radius = radius;
-    this.draw = function() {
-        console.log('draw'+this.radius);
-    }
-`);
+// const Circle1 = new Function('radius',`
+//     this.radius = radius;
+//     this.draw = function() {
+//         console.log('draw'+this.radius);
+//     }
+// `);
 
-const circle = new Circle1(1);
-console.log(circle);
+// const circle = new Circle1(1);
+// console.log(circle);

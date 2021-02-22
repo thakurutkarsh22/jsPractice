@@ -31,7 +31,7 @@ function Person() {
     this.name = 'Utt';
     this.greet = function() {
         console.log('Hi I am ' + this.name + ' and I am ' + this.age + ' years old');
-    };
+    }; 
 }
 
 // Person.prototype = {

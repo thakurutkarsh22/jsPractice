@@ -27,8 +27,8 @@ let printName = function(country, state) {
 
 
 // printName.call(null,"indi","bharti")
-// printName.call(name, "india", "delhi");
-// printNameArrow.call(name, "india", "delhi");
+printName.call(name, "india", "delhi");
+printNameArrow.call(name, "india", "delhi");
 
 // printName.call(name1, "india", "punjab");
 
@@ -49,15 +49,25 @@ let printName = function(country, state) {
 
 // if browser dosent support bind method we have to make our bind method 
 
-
-Function.prototype.mybind = function(...args){
-    let obj = this;
-    params = args.slice(1);
-    return function() {
-        // console.log('inside function', this);
-        obj.apply(args[0], params);
-    }
+let name = {
+    firstName: 'utkarsh',
+    lastName: 'thakur'
 }
+
+
+let printName = function(country, state) {
+    console.log(this);
+    console.log(this.firstName + " " + this.lastName + " " + this.jhatpakoda + " " + country +" " + state);
+}
+
+// Function.prototype.mybind = function(...args){
+//     let obj = this;
+//     params = args.slice(1);
+//     return function() {
+//         // console.log('inside function', this);
+//         obj.apply(args[0], params);
+//     }
+// }
 
 // let printMyName2 = printName.mybind(name, "india", "delhi"); 
 // printMyName2();
@@ -66,26 +76,26 @@ Function.prototype.mybind = function(...args){
 
 // problem code below is answer code
 
-Function.prototype.mybind = function(...args){
-    let obj = this;
-    params = args.slice(1);
-    return function() {
-        obj.apply(args[0], params);
-    }
-}
+// Function.prototype.mybind = function(...args){
+//     let obj = this;
+//     params = args.slice(1);
+//     return function() {
+//         obj.apply(args[0], params);
+//     }
+// }
 
 // let printMyName2 = printName.mybind(name, "india"); 
 // printMyName2("delhi"); // thsi shows undefined 
 
 
 
-Function.prototype.mybind = function(...args){
-    let obj = this;
-    params = args.slice(1);
-    return function(...args2) {
-        obj.apply(args[0], [...params,...args2]);
-    }
-}
+// Function.prototype.mybind = function(...args){
+//     let obj = this;
+//     params = args.slice(1);
+//     return function(...args2) {
+//         obj.apply(args[0], [...params,...args2]);
+//     }
+// }
 
-let printMyName2 = printName.mybind(name, "india"); 
-printMyName2("delhi");
+// let printMyName2 = printName.mybind(name, "india"); 
+// printMyName2("delhi");

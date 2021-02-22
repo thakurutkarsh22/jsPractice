@@ -46,3 +46,25 @@ for(var  k=0;k<3;k++){
         }, 1000);
     })(k);   
 }
+
+
+// polyfill of then finally
+
+if (!Promise.prototype.finally) {
+    Promise.prototype.finally = function f(fn){
+        return this.then(
+            function t(v){
+                return Promise.resolve( fn() )
+                    .then(function t(){
+                        return v;
+                    });
+            },
+            function c(e){
+                return Promise.resolve( fn() )
+                    .then(function t(){
+                        throw e;
+                    });
+            }
+        );
+    };
+}

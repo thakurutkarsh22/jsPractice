@@ -1,5 +1,7 @@
-const { Observable } = require("rxjs");
+// const { Observable } = require("rxjs");
 //-------------------------------------------- creating ---------------------------------------------- 
+
+// const { Observable } = require("rxjs");
 
 
 
@@ -15,9 +17,9 @@ const { Observable } = require("rxjs");
 // promise.then((data) =>
 //      console.log('then: ' + data), (reject) => { console.log(reject)});     
      
-// //      .catch((data) => {
-// //          console.log('catch: ' + data)
-// // });
+//      .catch((data) => {
+//          console.log('catch: ' + data)
+// });
 
 // // creating observables 
 
@@ -29,9 +31,9 @@ const { Observable } = require("rxjs");
 //         observer.error('Error in observabel');
 // });
 
-// // let subscription$ = observable.subscribe((data) => {
-// //     console.log(data);
-// // }, (error) => {console.log('observalbe-error: ' + error)});
+// let subscription$ = observable.subscribe((data) => {
+//     console.log(data);
+// }, (error) => {console.log('observalbe-error: ' + error)});
 
 // let subscription$ = observable.subscribe({
 //     next: (data) => {console.log(data)},
@@ -161,11 +163,12 @@ const { Observable } = require("rxjs");
 // console.log('after main last');
 
 // console.log('creating Observable');
+
 // const observable = new Observable(observer => {
 //     console.log('Observable Running');
-//     observer.next(1);
+//     // observer.next(1);
 //     observer.next(21);
-//     setTimeout(() => { observer.next(2)} ,0);
+//     // setTimeout(() => { observer.next(2)} ,0);
 // });
 
 // observable.subscribe(data => {

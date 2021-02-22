@@ -18,15 +18,15 @@
 
 
 // syncronous exapmle
-// [1,2,3,4].forEach(()=>{
+// [1,2,3,4].forEach((i)=>{
 //     console.log(i);
 // })
 
 // async
 
 const asyncForEach = function(array,cb) {
-    array.forEach(()=>{
-        setTimeout(cb,0);
+    array.forEach((i)=>{
+        setTimeout(cb.call(i),0);
     })
 }
 

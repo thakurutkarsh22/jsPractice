@@ -115,7 +115,7 @@
 // }
 
 // Circle.prototype.duplicate = function() {
-//     Shape.prototype.duplicate.call(this); // caling base duplicate also 
+//     // Shape.prototype.duplicate.call(this); // caling base duplicate also 
 //     console.log('duplicate circle')
 // }
 
@@ -126,50 +126,50 @@
 
 // ----------------- PolyMorphism --------------------------
 
-// function extend(Child, Parent) {
-//     Child.prototype = Object.create(Parent.prototype);
-//     Child.prototype.constructor = Child;
-// }
+function extend(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+}
 
-// function Shape() {
+function Shape() {
 
-// }
+}
 
-// Shape.prototype.duplicate = function() {
-//     console.log('duplicate')
-// }
+Shape.prototype.duplicate = function() {
+    console.log('duplicate')
+}
 
-// function Circle() {
+function Circle() {
 
-// }
-
-
-// // This order is necessary 
-// extend(Circle,Shape);
-
-// Circle.prototype.duplicate = function() {
-//     Shape.prototype.duplicate.call(this); // calling base duplicate also 
-//     console.log('duplicate circle')
-// }
+}
 
 
-// function Square() {
+// This order is necessary 
+extend(Circle,Shape);
 
-// }
+Circle.prototype.duplicate = function() {
+    Shape.prototype.duplicate.call(this); // calling base duplicate also 
+    console.log('duplicate circle')
+}
 
-// extend(Square,Shape);
-// Square.prototype.duplicate = function() {
-//     console.log('duplicate square')
-// }
 
-// const shapes = [
-//     new Circle(),
-//     new Square()
-// ];
+function Square() {
 
-// for(let shape of shapes){
-//     shape.duplicate();
-// }
+}
+
+extend(Square,Shape);
+Square.prototype.duplicate = function() {
+    console.log('duplicate square')
+}
+
+const shapes = [
+    new Circle(),
+    new Square()
+];
+
+for(let shape of shapes){
+    shape.duplicate();
+}
 
 
 
