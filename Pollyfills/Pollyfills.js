@@ -285,6 +285,23 @@ if (!Function.prototype.call) {
       clearIntervalPollyfill
     };
   }
+
+  intervalId = setIntervalPolyfill(greeting,1000,'abba');
+
+function printNumbers(from, to) {
+  let current = from;
+
+  let timeId = setInterval(() => {
+    console.log(current);
+    if(current == to) {
+      clearTimeout(timeId);
+    }
+    current++;
+  }, 1000)
+}
+
+printNumbers(5,10);
+
   
   // another setInterval
   
