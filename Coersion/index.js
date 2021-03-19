@@ -71,6 +71,11 @@ var e = {
 console.log(+e); // 1 (integer)
 
 
+// A (unary) plus sign can sometimes be used as a shorthand for valueOf
+
+// console.log(+funA) 
+
+
 /// 
 // alert(b); // [object Object]
 
@@ -111,3 +116,19 @@ var f = {
 }
 
 alert(f)
+
+
+
+
+/// -------------------------- function coercion -------------------------------
+
+function funA() {
+  console.log("as");
+}
+
+funA.valueOf = function () {
+  return 10;
+}
+
+console.log(funA - 19); // -9
+console.log(funA() + 19); // "as" - 19 == NaN
