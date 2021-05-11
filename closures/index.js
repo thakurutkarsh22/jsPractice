@@ -68,3 +68,44 @@ if (!Promise.prototype.finally) {
         );
     };
 }
+
+//// ---- advantages of closure 
+
+// 1. module pattern 
+// 2. function currying 
+// 3. higherOrderFunctions memoise and ones
+
+
+// closures work in data hiding and encapsulation. 
+
+// var counter = 0;
+
+// function incrementCounter(){
+//     counter++;
+// }
+
+function counter() {
+    var count = 0;
+
+    return function incrementCounter(){
+        counter++;
+        console.log(counter);
+    }
+}
+
+console.log(count); // cant do this is privacy 
+
+var counter1 = counter();
+counter1(); // this will increment the counter to 1
+counter1(); // this will increment the counter to 2
+
+
+var counter2 = counter(); // this will be a completly new counter the previous. 
+counter2(); // 1 
+counter2(); // 2 
+
+
+/// ---- disadvantages of closures -------------- 
+
+// 1. over consumptions of memory those closed variables are not garbage collected till the program expire. 
+//2. it can lead to memory leaks.
