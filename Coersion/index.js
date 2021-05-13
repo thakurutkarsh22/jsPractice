@@ -132,3 +132,7 @@ funA.valueOf = function () {
 
 console.log(funA - 19); // -9
 console.log(funA() + 19); // "as" - 19 == NaN
+
+// gold article on conversion. 
+
+// http://www.adequatelygood.com/Object-to-Primitive-Conversions-in-JavaScript.html
