@@ -1,0 +1,38 @@
+/* .box {
+    height: 528px;
+    width: 100%;
+    background-color: red;
+    padding: 10px;
+    border: 5px solid black;
+    box-sizing: border-box;   /* This content-box is default behaviour
+}
+
+.span {
+    padding: 10px;
+    width: 100px;
+    height: 120px;
+    margin: 120px;
+    border: 5px solid black;
+    display: inline-block;
+} */
+
+
+html {
+    font-size: 0.1rem;
+}
+
+body {
+    font-size: 2.18rem;
+}
+
+.rem {
+    font-size: 2rem;
+}
+
+.em {
+    font-size: 2em;
+}
+
+.custom {
+    font-size: 40px;
+}
