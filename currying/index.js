@@ -47,6 +47,7 @@
 // }
 // return curr
 // }
+
   
 //   const curriedFn = curry(sum)
 //   const a = curriedFn(10, 20, 30) // 60
@@ -55,6 +56,56 @@
 //   const d = curriedFn(10)(20)(30) // 100
 
 //   console.log(a,b,c,d);
+
+// another example of currying 
+
+/* function curryWrapper(fn) {
+  
+  let args1 = [];
+  
+  function curr(...args) {
+    args1.push(...args);
+    if(args1.length >= fn.length){    		
+        var a =  fn.apply(null, args1);
+        args1.length = 0; // this is done to keep the state in check basically reset.
+        return a;
+    }
+    return curr;
+  }
+  
+  return curr;
+
+} */
+
+// good example where you wont be needing internal array like previous example; 
+
+// function curryWrapper(fn) {
+ 
+  
+//   function curr(...args) {
+  
+//     if(args.length >= fn.length){    		
+// 				return fn(...args);
+// 		}
+//     return (...args2) => curr(...args, ...args2) ;
+//   }
+  
+//   return curr;
+
+// }
+
+function multiply(x,y, z) {
+ 
+  return x*y*z;
+}
+
+
+const curried = curryWrapper(multiply);
+ 
+ 
+console.log(curried(2)(2)(4));
+console.log(curried(2,2)(4));
+console.log(curried(2,2,4));
 
 
 // using toString
