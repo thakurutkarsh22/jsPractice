@@ -92,6 +92,7 @@ openReq.upg
 
 /////// ----------------------------- In cognito mode (what happens exactly) 
 
-// It essentially sets the cache path to a temporary folder. Cookies are still used, but everything starts "fresh" when the incognito window is launched. This applies all storage, including Cookies, Local Storage, Web SQL, IndexedDB, cache, etc.
+// It essentially sets the cache path to a temporary folder. Cookies are still used, but everything starts "fresh" when the incognito window is launched. 
+// This applies all storage, including Cookies, Local Storage, Web SQL, IndexedDB, cache, etc.
 
 // Of course Chrome also leaves pages out of the browser's history.
