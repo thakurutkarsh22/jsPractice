@@ -27,3 +27,41 @@ const throttle = (fn, limit) => {
 const betterExpensiveFunction = throttle(expensive,10000);
 
 window.addEventListener("resize",betterExpensiveFunction);
+
+
+// memoizer 
+
+function memoizer(fun) {
+
+    let cache = {};
+    return function(n){
+        if(cache[n]) {
+            return cache[n];
+        } else {
+            var result = fun.call(this, n);
+            cache[n] = result;
+            return result;
+        }
+    }
+}
+
+// function fibonacci(n,memo) {
+//     memo = memo || {}
+//     if (memo[n]) {
+//         return memo[n]
+//     }
+//     if (n <= 1) {
+//         return 1
+//     }
+//     return memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo)
+// }
+
+function fibonacci(n) {
+    if (n <= 1) {
+        return 1
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+const betterFibbo = memoizer(fibonacci);
+betterFibbo(5);
