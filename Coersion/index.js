@@ -131,7 +131,7 @@ funA.valueOf = function () {
 }
 
 console.log(funA - 19); // -9
-console.log(funA() + 19); // "as" - 19 == NaN
+console.log(funA() + 19); // "undefined" - 19 == NaN
 
 // gold article on conversion. 
 
